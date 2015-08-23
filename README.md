@@ -23,3 +23,7 @@ This file is where you will document your project.
 
 ###Planned features
 *What changes would you make to your project if you continued with it in the future?*
+
+$("a"+i) ===> $("a0")
+
+Notes:
