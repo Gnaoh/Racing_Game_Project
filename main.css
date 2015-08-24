@@ -28,11 +28,11 @@ position: absolute;
 
 }
 
-div#car1 {
+div#playerOne {
 background-image: url('./images/redCar.png');
 }
 
-div#car2 {
+div#playerTwo {
 top: 70px;
 background-image: url('./images/blueCar.png');
 }

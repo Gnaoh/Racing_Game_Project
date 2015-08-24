@@ -1,43 +1,65 @@
-// OOP Racing Game example boilerplate code
 
-function Game() {
-  //Create a new instance of player 1
-  //this.player1 = ...
+// Add keyBinding for movement to Car1
+window.addEventListener('keyup', function(event) {
+  if (event.keyCode === 39) {
+    this.$element = document.getElementById('playerOne');
+    this.$element.style.left = parseInt(this.$element.style.left, 10) + 30 + "px";
+        var car1Pos = getComputedStyle(this.$element);
 
-  //Do the same for a player 2
-  //this.player2 = ...
+        if ( car1Pos === 1500 + "px")
+            {winner("Player 1");}        
+  }
+});
 
-  //Create the track
-  //this.track = ...
+// Add keyBinding for movement to Car2
+window.addEventListener('keyup', function(event) {
+  if (event.keyCode === 68) {
+    this.$element = document.getElementById('playerTwo');
+    this.$element.style.left = parseInt(this.$element.style.left, 10) + 30 + "px";}
+        var car2Pos = getComputedStyle(this.$element).getPropertyValue("left");
+
+        if ( car2Pos === 1500 + "px")
+            {winner("Player 2");} 
+  });
+
+//ADD BOT
+
+botRacer = function() {
+  this.$element = document.getElementById('playerTwo');
+  this.$el.style.left = parseInt(this.$el.style.left, 10) + 1 + "px";
+        var car2Pos = getComputedStyle(this.$el).getPropertyValue("left");
+        if ( car2Pos === 660 + "px")
+            { winner("Player 2");
+                aiStop();   } 
+};
+
+botMove = function() {
+  var botInt = setInterval(aiCar, 15)
+};
+
+function botStop() {
+  clearInterval (botInt);
 }
 
-// `Game.prototype.init` kicks off a new game with a board and two players
-Game.prototype.init = function() {
-  //
+
+
+
+// Reset position for the individual Cars
+CarMove = function() {
+    // grab the car element
+    this.$element = document.getElementById('playerOne');
+    this.$el2 = document.getElementById('playerTwo');
+    // set the starting position of the Track
+    this.$element.style.left = "0px";
+    this.$el2.style.left = "0px";
+
 };
 
-// A starter Player constructor.
-function Player(team) {
-  //this.name = ...
-  //this.position = ...
-};
+// Winner Alert & car reset //
+function winner(win){
+    alert(win + " is the winner!");
+    setTimeout(CarMove());
+}
 
-// Remember: prototypes are shared functions between all game instances
-Player.prototype.move = function() {
-  //update player's position
-};
-
-
-// A starter Track constructor.
-function Track() {
-  //Tracks the cells of the board instance
-  //this.$cells = ...
-
-  //Store any other properties that board may have below, such as a reset option
-};
-
-/*========================================
-              START GAME
-========================================*/
-var game = new Game();
-game.init();
+// intialize CarMove on page load //
+CarMove();
