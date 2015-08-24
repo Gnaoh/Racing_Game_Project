@@ -16,14 +16,35 @@ This file is where you will document your project.
 
 
 ### Technologies Used
-*What technologies did you use while developing this project?*
+-jQuery
+-Javascript
+-HTML
+-CSS
+-Photoshop CS
 
 ###Existing features
-*What features does your new racing app have?*
+-Two player game
+-Timer
+-Countdown
+-Reset Button
+-Alert 1st place winner
 
 ###Planned features
-*What changes would you make to your project if you continued with it in the future?*
+-Allow users to input name
+-Car selection
+-Engine on/off
+-Track up with left/right turns
+-Bott Racer
 
-$("a"+i) ===> $("a0")
 
 Notes:
+
+Instructions:
+
+Controls
+[A] - Player One movement
+[L] - Player Two movement
+
+Countdown only works when page is refreshed for the first time.
+
+
