@@ -6,14 +6,47 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="main.css">
-  <!-- Hey, where's the jquery? -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-  <!-- HTML Body -->
-  <h1>Rrrracing Game</h1>
-  <img src="http://www.cs.utah.edu/~gk/atwork/img/hevequip2.gif" alt="under construction"></img>
-  <!-- Game Board Here -->
-  <!-- Reset button -->
+
+<!========================================
+              TITLE
+========================================!>
+
+  <h1>Cruis'n WDI</h1>
+
+<!========================================
+              TRACK // RACE CARS
+========================================!>
+  <div id="raceTrack" class="track">
+    <div id="raceTrackLine"></div>
+    
+    <div id="car1" class="car"></div>
+    
+    <div id="car2" class="car"></div>
+
+  </div>
+
+  <!========================================
+                ENGINER START
+  ========================================!>
+
+  <div class="keyPlate"></div>
+    <h4 class="ks">ON | OFF</h4>
+
+    <div id= "keyStart">
+      <div id="keySwitch" onclick="carstart()"></div>
+    </div>
+
+  <!========================================
+                RESET/PLAY BUTTON
+  ========================================!>
+
+  <input type ="button" id="playButton" class="Play" onClick="CarMove(), carstart()" value="New Game"/>
+
 </body>
 </html>

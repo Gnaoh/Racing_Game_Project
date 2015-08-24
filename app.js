@@ -36,6 +36,8 @@ function Track() {
   //Store any other properties that board may have below, such as a reset option
 };
 
-// Start the game!
+/*========================================
+              START GAME
+========================================*/
 var game = new Game();
 game.init();

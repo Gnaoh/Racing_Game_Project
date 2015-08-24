@@ -1,1 +1,39 @@
-/* Style Sheet */
+body {
+  background-image: url('./images/raceTrackFinal.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div#raceTrack {
+position: absolute;
+left: 0;
+right: 0;
+height: 140px;
+position: absolute;
+top: 595px;
+}
+
+/*#raceTrackLine {
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+  bottom: 50%;
+  }*/
+
+.car {
+width: 100px;
+height: 60px;
+position: absolute;
+
+}
+
+div#car1 {
+background-image: url('./images/redCar.png');
+}
+
+div#car2 {
+top: 70px;
+background-image: url('./images/blueCar.png');
+}
+
