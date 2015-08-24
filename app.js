@@ -1,13 +1,14 @@
 startTime = null;
 
+
 /*========================================
               PLAYER ONE CONFIG
 ========================================*/
 window.addEventListener('keyup', function(event) {
   if (event.keyCode === 65) {
-    this.$racecar = document.getElementById('playerOne');
-    this.$racecar.style.left = parseInt(this.$racecar.style.left, 10) + 30 + "px";
-    var playerOnePos = getComputedStyle(this.$racecar).getPropertyValue("left");
+    this.$elem1 = document.getElementById('playerOne');
+    this.$elem1.style.left = parseInt(this.$elem1.style.left, 10) + 30 + "px";
+    var playerOnePos = getComputedStyle(this.$elem1).getPropertyValue("left");
     this.$startTime = $.now();
 
       if ( playerOnePos === 1500 + "px") {
@@ -23,9 +24,9 @@ window.addEventListener('keyup', function(event) {
 ========================================*/
 window.addEventListener('keyup', function(event) {
   if (event.keyCode === 76) {
-    this.$racecar = document.getElementById('playerTwo');
-    this.$racecar.style.left = parseInt(this.$racecar.style.left, 10) + 30 + "px";
-        var playerTwoPos = getComputedStyle(this.$racecar).getPropertyValue("left");
+    this.$elem2 = document.getElementById('playerTwo');
+    this.$elem2.style.left = parseInt(this.$elem2.style.left, 10) + 30 + "px";
+        var playerTwoPos = getComputedStyle(this.$elem2).getPropertyValue("left");
        
         if ( playerTwoPos === 1500 + "px") {
             winner("Blue car");            
@@ -34,21 +35,42 @@ window.addEventListener('keyup', function(event) {
 });
 
 /*========================================
+              COUNT DOWN
+========================================*/
+
+window.setInterval(countDown, 1000);
+  function countDown() {
+    time -=1;
+    $('#countdown').html(time); 
+  if (time === 0) {
+    $('#countdown').text("GO!");
+    document.getElementById("countdown").style.fontSize = "1500%";
+    document.getElementById("countdown").style.fontweight = "900";
+    document.getElementById("countdown").style.color = "#0eb700";  
+  } else if (time === -1) {
+    $('#countdown').remove();
+
+  }
+}
+
+/*========================================
               RESET/DRIVE
 ========================================*/
 CarMove = function() {
-    this.$racecar = document.getElementById('playerOne');
-    this.$racecar2 = document.getElementById('playerTwo');
-    this.$racecar.style.left = "0px";
-    this.$racecar2.style.left = "0px";
+    this.$elem1 = document.getElementById('playerOne');
+    this.$elem2 = document.getElementById('playerTwo');
+    this.$elem1.style.left = "0px";
+    this.$elem2.style.left = "0px";
+    time = 6;
 
 };
+
 
 /*========================================
               WINNER
 ========================================*/
 function winner(win){
-    alert(win + " is the winner!");
+    alert("Congratulations, " + win + " is the winner!");
     setTimeout(CarMove());
 }
 

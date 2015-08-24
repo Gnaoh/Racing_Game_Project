@@ -62,3 +62,10 @@ ul {
   padding: 1px;
   margin: 1px;
 }
+
+
+#countdown {
+  font-size: 150px;
+  font-family: fantasy;
+  color: red;
+}
