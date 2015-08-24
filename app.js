@@ -1,65 +1,77 @@
+startTime = null;
 
-// Add keyBinding for movement to Car1
+/*========================================
+              PLAYER ONE CONFIG
+========================================*/
 window.addEventListener('keyup', function(event) {
-  if (event.keyCode === 39) {
-    this.$element = document.getElementById('playerOne');
-    this.$element.style.left = parseInt(this.$element.style.left, 10) + 30 + "px";
-        var car1Pos = getComputedStyle(this.$element);
+  if (event.keyCode === 65) {
+    this.$racecar = document.getElementById('playerOne');
+    this.$racecar.style.left = parseInt(this.$racecar.style.left, 10) + 30 + "px";
+    var playerOnePos = getComputedStyle(this.$racecar).getPropertyValue("left");
+    this.$startTime = $.now();
 
-        if ( car1Pos === 1500 + "px")
-            {winner("Player 1");}        
+      if ( playerOnePos === 1500 + "px") {
+          winner("Red car");
+        this.$raceTime = $.now() - this.$startTime;
+        $('#timer1').text(this.$raceTime * Math.pow(10, -3)*10.0 + "s");
+      }
   }
 });
 
-// Add keyBinding for movement to Car2
+/*========================================
+              PLAYER TWO CONFIG
+========================================*/
 window.addEventListener('keyup', function(event) {
-  if (event.keyCode === 68) {
-    this.$element = document.getElementById('playerTwo');
-    this.$element.style.left = parseInt(this.$element.style.left, 10) + 30 + "px";}
-        var car2Pos = getComputedStyle(this.$element).getPropertyValue("left");
+  if (event.keyCode === 76) {
+    this.$racecar = document.getElementById('playerTwo');
+    this.$racecar.style.left = parseInt(this.$racecar.style.left, 10) + 30 + "px";
+        var playerTwoPos = getComputedStyle(this.$racecar).getPropertyValue("left");
+       
+        if ( playerTwoPos === 1500 + "px") {
+            winner("Blue car");            
+        }
+  }
+});
 
-        if ( car2Pos === 1500 + "px")
-            {winner("Player 2");} 
-  });
-
-//ADD BOT
-
-botRacer = function() {
-  this.$element = document.getElementById('playerTwo');
-  this.$el.style.left = parseInt(this.$el.style.left, 10) + 1 + "px";
-        var car2Pos = getComputedStyle(this.$el).getPropertyValue("left");
-        if ( car2Pos === 660 + "px")
-            { winner("Player 2");
-                aiStop();   } 
-};
-
-botMove = function() {
-  var botInt = setInterval(aiCar, 15)
-};
-
-function botStop() {
-  clearInterval (botInt);
-}
-
-
-
-
-// Reset position for the individual Cars
+/*========================================
+              RESET/DRIVE
+========================================*/
 CarMove = function() {
-    // grab the car element
-    this.$element = document.getElementById('playerOne');
-    this.$el2 = document.getElementById('playerTwo');
-    // set the starting position of the Track
-    this.$element.style.left = "0px";
-    this.$el2.style.left = "0px";
+    this.$racecar = document.getElementById('playerOne');
+    this.$racecar2 = document.getElementById('playerTwo');
+    this.$racecar.style.left = "0px";
+    this.$racecar2.style.left = "0px";
 
 };
 
-// Winner Alert & car reset //
+/*========================================
+              WINNER
+========================================*/
 function winner(win){
     alert(win + " is the winner!");
     setTimeout(CarMove());
 }
 
-// intialize CarMove on page load //
+//LOAD GAME
 CarMove();
+
+
+// /*========================================
+//               ADD BOT
+// ========================================*/
+// botRacer = function() {
+//   this.$racecar = document.getElementById('playerTwo');
+//   this.$el.style.left = parseInt(this.$el.style.left, 10) + 1 + "px";
+//         var car2Pos = getComputedStyle(this.$el).getPropertyValue("left");
+//         if ( car2Pos === 660 + "px")
+//             { winner("Player 2");
+//                 aiStop();   } 
+// };
+
+// botMove = function() {
+//   var botInt = setInterval(aiCar, 15)
+// };
+
+// function botStop() {
+//   clearInterval(botInt);
+// }

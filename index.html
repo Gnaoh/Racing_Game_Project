@@ -13,10 +13,13 @@
 <body>
 
 <!========================================
-              TITLE
+              LOGO/PLAY BUTTON
 ========================================!>
 
-  <h1>Cruis'n WDI</h1>
+<center><img src="./images/logo.png"></center>
+<center><input type ="button" class="play" onClick="CarMove()"/></center>
+
+
 
 <!========================================
               TRACK // RACE CARS
@@ -30,23 +33,15 @@
 
   </div>
 
-  <!========================================
-                ENGINER START
-  ========================================!>
+<!========================================
+              RACE TIMER
+========================================!>
 
-  <div class="keyPlate"></div>
-    <h4 class="ks">ON | OFF</h4>
+<ul style="list-style-type:none" class="timers">Timer (S):
+  <li id="timer1">00:00:00</li>
+</ul>
 
-    <div id= "keyStart">
-      <div id="keySwitch" onclick="carstart()"></div>
-    </div>
 
-  <!========================================
-                RESET/PLAY BUTTON
-  ========================================!>
-
-  <input type ="button" id="playButton" class="Play" onClick="CarMove(), carstart()" value="New Game"/>
-  
   <script type="text/javascript" src="app.js"></script>
 
 </body>

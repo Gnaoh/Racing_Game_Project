@@ -4,7 +4,11 @@ body {
   background-repeat: no-repeat;
 }
 
-div#raceTrack {
+h1 {
+  background-image: url('./images/logo.png');
+
+}
+#raceTrack {
 position: absolute;
 left: 0;
 right: 0;
@@ -28,12 +32,33 @@ position: absolute;
 
 }
 
-div#playerOne {
+#playerOne {
 background-image: url('./images/redCar.png');
 }
 
-div#playerTwo {
+#playerTwo {
 top: 70px;
 background-image: url('./images/blueCar.png');
 }
 
+.play {
+  background-image: url('./images/play.png');
+  background-size: cover;
+  border-radius: 11px;
+  height: 50px;
+  width: 100px;
+}
+
+ul {
+  position: relative;
+  font-size: 20px;
+  font-weight: lighter;
+  top: 550px;
+
+}
+ #timer1 {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 1px;
+  margin: 1px;
+}
