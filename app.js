@@ -44,8 +44,6 @@ window.setInterval(countDown, 1000);
     $('#countdown').html(time); 
   if (time === 0) {
     $('#countdown').text("GO!");
-    document.getElementById("countdown").style.fontSize = "1500%";
-    document.getElementById("countdown").style.fontweight = "900";
     document.getElementById("countdown").style.color = "#0eb700";  
   } else if (time === -1) {
     $('#countdown').remove();
