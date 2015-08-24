@@ -54,24 +54,3 @@ function winner(win){
 
 //LOAD GAME
 CarMove();
-
-
-// /*========================================
-//               ADD BOT
-// ========================================*/
-// botRacer = function() {
-//   this.$racecar = document.getElementById('playerTwo');
-//   this.$el.style.left = parseInt(this.$el.style.left, 10) + 1 + "px";
-//         var car2Pos = getComputedStyle(this.$el).getPropertyValue("left");
-//         if ( car2Pos === 660 + "px")
-//             { winner("Player 2");
-//                 aiStop();   } 
-// };
-
-// botMove = function() {
-//   var botInt = setInterval(aiCar, 15)
-// };
-
-// function botStop() {
-//   clearInterval(botInt);
-// }
